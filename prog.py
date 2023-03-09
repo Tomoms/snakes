@@ -14,5 +14,5 @@ if __name__ == "__main__":
 		filename = str(sys.argv[1])
 	parse_input(filename)
 	with open(filename, "r") as fp:
-		snakes = str(fp[1]).split()
+		snakes = np.array(fp.readlines()[1].split()).astype(np.int64)
 	print(snakes)
