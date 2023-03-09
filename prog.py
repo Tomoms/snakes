@@ -38,3 +38,4 @@ if __name__ == "__main__":
 	for snake in snakes:
 		print(snake)
 		print(snake.output())
+	print(matrix)
