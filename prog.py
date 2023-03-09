@@ -23,9 +23,7 @@ if __name__ == "__main__":
 	else:
 		filename = str(sys.argv[1])
 	matrix = parse_input(filename)
-	print("\n\n NANS")
-	print(find_nans(matrix))
-	print("\n\n")
+	nans = find_nans(matrix)
 	with open(filename, "r") as fp:
 		snakes_data = np.array(fp.readlines()[1].split()).astype(np.int64)
 	print(snakes_data)
@@ -34,7 +32,7 @@ if __name__ == "__main__":
 	snakes = [Snake(length) for length in snakes_data]
 	line = 0
 	for snake in snakes:
-		snake.place(matrix, line, 0)
+		snake.place(matrix, nans, line, 0)
 		line += 1
 
 	for snake in snakes:
